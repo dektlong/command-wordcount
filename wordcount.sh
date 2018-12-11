@@ -1,3 +1,3 @@
 #!/bin/bash
 
-tr -d ',' | tr -d '.' | tr -d '?' | tr -d ':' | tr -d '\'' | tr -d '"' |  tr -d '!' | tr ' ' '\n' | sort | uniq -c | sort -n
+sed $'s/[^[:print:]\t]//g' | tr ' ' '\n' | sort | uniq -c | sort -n
